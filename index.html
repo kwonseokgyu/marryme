@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>우리 딸 결혼해요</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,7 +10,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-
 :root{
   --paper:#FAF7F2;
   --ink:#403830;
@@ -21,55 +19,41 @@
   --bg:#E8DDCE;
 }
 
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box;}
 
-html,
-body{
+html,body{
   margin:0;
   padding:0;
 }
 
-html{
-  background:var(--bg);
-}
-
 body{
   background:var(--bg);
-  font-family:'Noto Serif KR', serif;
+  font-family:'Noto Serif KR',serif;
   color:var(--ink);
   min-height:100vh;
-
   display:flex;
   justify-content:center;
-
   overflow:hidden;
-
   -webkit-font-smoothing:antialiased;
 }
 
-
-/* =========================================
+/* =========================
    INTRO
-========================================= */
+========================= */
 
 .intro-screen{
   position:fixed;
   inset:0;
-
   width:100%;
   height:100dvh;
-
   background:var(--paper);
-
   z-index:9999;
 
   display:flex;
   justify-content:center;
   align-items:center;
 
-  padding:40px 28px;
+  padding:40px 25px;
 
   opacity:1;
   visibility:visible;
@@ -79,116 +63,78 @@ body{
     visibility 1.2s ease;
 }
 
-
 .intro-inner{
   width:100%;
-  max-width:400px;
-
+  max-width:410px;
   text-align:center;
 
   opacity:0;
-  transform:translateY(14px);
+  transform:translateY(15px);
 
   animation:introShow 1.2s ease forwards;
 }
 
-
 @keyframes introShow{
-
   to{
     opacity:1;
     transform:translateY(0);
   }
-
 }
-
 
 .intro-title{
   font-size:27px;
   font-weight:500;
-
   margin-bottom:30px;
-
-  letter-spacing:-1px;
 }
-
 
 .intro-text{
   margin:0;
-
   text-align:center;
-
   font-size:15px;
   font-weight:300;
-
   line-height:2.2;
-
   word-break:keep-all;
 }
 
-
-/* 카운트다운 */
-
 .countdown-wrap{
-  margin-top:35px;
-
+  margin-top:36px;
   height:42px;
-
   display:flex;
   justify-content:center;
   align-items:center;
 }
 
-
 #countdownNumber{
-  display:inline-block;
-
-  font-family:'Space Mono', monospace;
-
-  font-size:21px;
-
+  font-family:'Space Mono',monospace;
+  font-size:22px;
   color:var(--point);
-
+  display:inline-block;
   animation:countPulse 1s ease;
 }
 
-
 @keyframes countPulse{
-
   0%{
     opacity:0;
-    transform:translateY(5px) scale(.95);
+    transform:translateY(5px);
   }
-
   25%{
     opacity:1;
-    transform:translateY(0) scale(1);
+    transform:translateY(0);
   }
-
   75%{
     opacity:1;
   }
-
   100%{
     opacity:0;
-    transform:translateY(-5px) scale(.97);
+    transform:translateY(-5px);
   }
-
 }
-
 
 .intro-skip{
   margin-top:4px;
-
   font-size:10px;
-
   color:#B4A89C;
-
-  letter-spacing:.5px;
 }
-
-
-/* 인트로 종료 */
 
 body.show-card{
   overflow:auto;
@@ -200,15 +146,13 @@ body.show-card .intro-screen{
   pointer-events:none;
 }
 
-
-/* =========================================
-   MAIN CARD
-========================================= */
+/* =========================
+   MAIN
+========================= */
 
 .card{
   width:100%;
   max-width:480px;
-
   min-height:100vh;
 
   background:var(--paper);
@@ -225,90 +169,68 @@ body.show-card .intro-screen{
     transform 1.2s ease .2s;
 }
 
-
 body.show-card .card{
   opacity:1;
   transform:translateY(0);
 }
 
+.section-small{
+  font-family:'Space Mono',monospace;
+  font-size:10px;
+  letter-spacing:3px;
+  color:var(--point);
+  margin-bottom:20px;
+}
 
-/* =========================================
+/* =========================
    HERO
-========================================= */
+========================= */
 
 .hero{
-  width:100%;
-
   display:flex;
   flex-direction:column;
   align-items:center;
-
   text-align:center;
-
-  padding-bottom:50px;
+  padding-bottom:52px;
 }
 
-
 .hero-small{
-  font-family:'Space Mono', monospace;
-
+  font-family:'Space Mono',monospace;
   font-size:10px;
-
   letter-spacing:3px;
-
   color:var(--point);
-
   margin-bottom:13px;
 }
 
-
 .hero-title{
   margin:0 0 35px;
-
-  text-align:center;
-
   font-size:27px;
-
   font-weight:500;
-
-  letter-spacing:-1px;
 }
 
-
-/* =========================================
-   PHOTO
-========================================= */
+/* 사진 */
 
 .photo-wrap{
   width:80%;
   max-width:305px;
-
   margin:0 auto 30px;
 }
 
-
 .photo-frame{
   position:relative;
-
   width:100%;
-
-  margin:auto;
-
   background:#fff;
 
   padding:11px 11px 32px;
 
   box-shadow:
-    0 16px 35px
-    rgba(62,47,37,.15);
+    0 16px 35px rgba(62,47,37,.15);
 
   transform:rotate(-.5deg);
 }
 
-
 .photo-frame::before{
   content:"";
-
   position:absolute;
 
   width:74px;
@@ -317,247 +239,141 @@ body.show-card .card{
   top:-10px;
   left:50%;
 
-  transform:
-    translateX(-50%)
-    rotate(-2deg);
+  transform:translateX(-50%) rotate(-2deg);
 
-  background:
-    rgba(200,117,132,.20);
+  background:rgba(200,117,132,.20);
 }
-
 
 .photo-frame img{
   display:block;
-
   width:100%;
-
-  aspect-ratio:4 / 5;
-
+  aspect-ratio:4/5;
   object-fit:cover;
-
   object-position:center;
-
-  margin:auto;
 }
 
-
-/* =========================================
-   NAMES
-========================================= */
-
-.names{
-  width:100%;
-
-  text-align:center;
-}
-
+/* 이름 */
 
 .names-row{
   display:flex;
-
   justify-content:center;
   align-items:center;
-
-  flex-wrap:wrap;
-
   gap:12px;
-
   font-size:19px;
+  flex-wrap:wrap;
 }
-
-
-.person{
-  display:inline-flex;
-  align-items:center;
-}
-
 
 .role{
   font-size:12px;
-
   color:var(--muted);
-
   margin-right:6px;
 }
-
 
 .name{
   font-weight:600;
 }
 
-
 .heart{
   color:var(--point);
-
   font-size:12px;
-
-  margin:0 2px;
 }
 
-
-/* =========================================
-   DATE / LOCATION
-========================================= */
+/* =========================
+   DATE
+========================= */
 
 .wedding-info{
-  width:100%;
-
   text-align:center;
 
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
 
   padding:42px 0;
-
-  margin-bottom:0;
 }
-
-
-.section-small{
-  font-family:'Space Mono', monospace;
-
-  font-size:10px;
-
-  letter-spacing:3px;
-
-  color:var(--point);
-
-  margin-bottom:21px;
-}
-
 
 .date-main{
   font-size:17px;
-
   font-weight:500;
-
   line-height:1.9;
 }
 
-
 .place{
   margin-top:9px;
-
   font-size:14px;
-
   color:#756B62;
-
   line-height:1.8;
 }
 
-
-/* =========================================
+/* =========================
    CALENDAR
-========================================= */
+========================= */
 
 .calendar-section{
   padding:48px 0 58px;
-
   text-align:center;
 }
-
 
 .month-title{
-  text-align:center;
-
-  margin-bottom:29px;
+  margin-bottom:28px;
 }
-
 
 .year{
   display:block;
-
-  font-family:'Space Mono', monospace;
-
+  font-family:'Space Mono',monospace;
   font-size:10px;
-
-  color:var(--muted);
-
   letter-spacing:3px;
-
-  margin-bottom:6px;
+  color:var(--muted);
+  margin-bottom:7px;
 }
-
 
 .month{
-  font-family:'Space Mono', monospace;
-
+  font-family:'Space Mono',monospace;
   font-size:24px;
-
   letter-spacing:4px;
-
-  font-weight:400;
 }
-
 
 .calendar{
   width:100%;
-
   max-width:340px;
-
-  margin:0 auto;
+  margin:auto;
 }
-
 
 .calendar table{
   width:100%;
-
   border-collapse:collapse;
-
   table-layout:fixed;
 }
 
-
 .calendar th{
   height:38px;
-
-  text-align:center;
-
-  font-family:'Space Mono', monospace;
-
+  font-family:'Space Mono',monospace;
   font-size:9px;
-
   font-weight:400;
-
   color:#9A8D81;
 }
-
 
 .calendar th:first-child{
   color:var(--point);
 }
 
-
 .calendar td{
-  position:relative;
-
   height:45px;
-
+  position:relative;
   text-align:center;
-
-  font-family:'Space Mono', monospace;
-
+  font-family:'Space Mono',monospace;
   font-size:13px;
-
   color:#5D544C;
 }
-
 
 .calendar td.sun{
   color:var(--point);
 }
 
-
-/* 결혼식 날짜 */
-
 .calendar td.wedding-day{
   color:#fff;
-
   font-weight:700;
-
   z-index:1;
 }
-
 
 .calendar td.wedding-day::before{
   content:"";
@@ -572,99 +388,155 @@ body.show-card .card{
 
   transform:translate(-50%,-50%);
 
+  background:var(--point);
   border-radius:50%;
 
-  background:var(--point);
-
   z-index:-1;
-
-  box-shadow:
-    0 5px 12px
-    rgba(200,117,132,.22);
 }
-
-
-/* =========================================
-   D DAY
-========================================= */
 
 .dday{
   margin-top:30px;
-
-  text-align:center;
 }
 
-
 .dday-main{
-  font-family:'Space Mono', monospace;
-
+  font-family:'Space Mono',monospace;
   font-size:13px;
-
   font-weight:700;
-
   letter-spacing:2px;
-
   color:var(--point);
 }
 
-
 .dday-sub{
   margin-top:9px;
-
-  font-family:'Space Mono', monospace;
-
+  font-family:'Space Mono',monospace;
   font-size:10px;
-
-  color:var(--muted);
-
   letter-spacing:1px;
+  color:var(--muted);
 }
 
+/* =========================
+   LOCATION
+========================= */
 
-/* =========================================
-   ACCOUNT
-========================================= */
-
-.account-section{
-  width:100%;
-
-  text-align:center;
+.location-section{
+  padding:50px 0 58px;
 
   border-top:1px solid var(--line);
 
-  padding-top:50px;
+  text-align:center;
 }
 
+.location-title{
+  font-size:18px;
+  font-weight:500;
+  margin-bottom:9px;
+}
+
+.venue-name{
+  font-size:17px;
+  font-weight:600;
+  margin-bottom:6px;
+}
+
+.venue-addr{
+  max-width:360px;
+  margin:0 auto 24px;
+
+  font-size:13px;
+  line-height:1.8;
+
+  color:var(--muted);
+}
+
+/* 약도 */
+
+.map-box{
+  width:100%;
+  max-width:370px;
+
+  aspect-ratio:16/10;
+
+  margin:0 auto 19px;
+
+  background:#F2E9DA;
+
+  overflow:hidden;
+
+  border:1px solid #E7DCCD;
+}
+
+.map-box svg{
+  display:block;
+  width:100%;
+  height:100%;
+}
+
+/* 지도 버튼 */
+
+.btn-row{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.map-btn{
+  border:1px solid var(--line);
+
+  background:#fff;
+
+  padding:9px 13px;
+
+  font-family:'Noto Serif KR',serif;
+
+  font-size:11px;
+
+  color:var(--ink);
+
+  cursor:pointer;
+
+  transition:.2s;
+}
+
+.map-btn:hover{
+  background:var(--point);
+  color:#fff;
+  border-color:var(--point);
+}
+
+.copy-message{
+  min-height:18px;
+  margin-top:9px;
+  font-size:11px;
+  color:var(--point);
+}
+
+/* =========================
+   ACCOUNT
+========================= */
+
+.account-section{
+  border-top:1px solid var(--line);
+  padding-top:50px;
+  text-align:center;
+}
 
 .account-title{
-  text-align:center;
-
   font-size:18px;
-
   font-weight:500;
-
   margin-bottom:11px;
 }
 
-
 .account-desc{
-  margin-bottom:27px;
-
-  text-align:center;
-
   font-size:13px;
-
   font-weight:300;
-
-  color:var(--muted);
-
   line-height:1.9;
+  color:var(--muted);
+  margin-bottom:27px;
 }
-
 
 .account-box{
   width:100%;
-
   max-width:360px;
 
   margin:auto;
@@ -676,85 +548,47 @@ body.show-card .card{
   text-align:center;
 }
 
-
 .account-person{
-  text-align:center;
-
   font-size:12px;
-
   color:var(--muted);
-
   margin-bottom:10px;
 }
 
-
 .account-number{
-  text-align:center;
-
-  font-family:'Space Mono', monospace;
-
+  font-family:'Space Mono',monospace;
   font-size:13px;
-
   margin-bottom:16px;
 }
 
-
 .copy-btn{
-  display:inline-block;
-
   padding:8px 18px;
 
+  border:1px solid var(--line);
   background:#fff;
 
-  border:1px solid var(--line);
-
-  color:var(--ink);
-
-  font-family:'Noto Serif KR', serif;
+  font-family:'Noto Serif KR',serif;
 
   font-size:11px;
 
   cursor:pointer;
-
-  transition:.25s;
 }
-
 
 .copy-btn:hover{
   background:var(--point);
-
-  color:#fff;
-
   border-color:var(--point);
+  color:#fff;
 }
 
-
-.copy-message{
-  height:18px;
-
-  margin-top:10px;
-
-  text-align:center;
-
-  font-size:11px;
-
-  color:var(--point);
-}
-
-
-/* =========================================
+/* =========================
    FOOTER
-========================================= */
+========================= */
 
 .footer{
   padding-top:58px;
 
-  text-align:center;
-
-  font-family:'Space Mono', monospace;
+  font-family:'Space Mono',monospace;
 
   font-size:9px;
-
   line-height:2;
 
   letter-spacing:2px;
@@ -762,10 +596,9 @@ body.show-card .card{
   color:#AA9E93;
 }
 
-
-/* =========================================
+/* =========================
    MOBILE
-========================================= */
+========================= */
 
 @media(max-width:390px){
 
@@ -774,135 +607,91 @@ body.show-card .card{
     padding-right:24px;
   }
 
-
-  .intro-screen{
-    padding-left:23px;
-    padding-right:23px;
-  }
-
-
   .intro-title{
     font-size:24px;
   }
 
-
   .intro-text{
     font-size:14px;
-
     line-height:2.15;
   }
-
 
   .hero-title{
     font-size:25px;
   }
 
-
   .photo-wrap{
     width:84%;
   }
 
-
   .names-row{
     font-size:18px;
   }
-
 
   .date-main{
     font-size:16px;
   }
 
 }
-
 </style>
-
 </head>
-
 
 <body>
 
-
-
-<!-- =========================================
+<!-- =========================
      INTRO
-========================================= -->
+========================= -->
 
-<div
-  class="intro-screen"
-  id="introScreen"
->
+<div class="intro-screen" id="introScreen">
 
   <div class="intro-inner">
-
 
     <div class="intro-title">
       초대합니다.
     </div>
 
-
     <p class="intro-text">
-
       저희 딸이<br>
       사랑과 믿음으로 한 가정을 이루고자<br>
       화촉을 밝히게 되었습니다.
-
       <br><br>
 
       귀한 걸음 하시어 경사를 축하해 주시고<br>
       첫걸음을 내딛는 두 사람의 앞날을<br>
       함께 축복하고 격려해 주시면<br>
       감사하겠습니다.
-
     </p>
 
-
-
     <div class="countdown-wrap">
-
-      <span id="countdownNumber">
-        5
-      </span>
-
+      <span id="countdownNumber">5</span>
     </div>
-
-
 
     <div class="intro-skip">
       화면을 터치하면 바로 열립니다
     </div>
-
 
   </div>
 
 </div>
 
 
-
-<!-- =========================================
-     MAIN INVITATION
-========================================= -->
+<!-- =========================
+     INVITATION
+========================= -->
 
 <main class="card">
-
-
 
   <!-- HERO -->
 
   <section class="hero">
 
-
     <div class="hero-small">
       WEDDING INVITATION
     </div>
 
-
     <h1 class="hero-title">
       우리 딸 결혼해요
     </h1>
-
-
-
-    <!-- 사진 -->
 
     <div class="photo-wrap">
 
@@ -917,97 +706,51 @@ body.show-card .card{
 
     </div>
 
+    <div class="names-row">
 
+      <span>
+        <span class="role">신랑</span>
+        <span class="name">장현우</span>
+      </span>
 
-    <!-- 이름 -->
+      <span class="heart">♥</span>
 
-    <div class="names">
-
-      <div class="names-row">
-
-
-        <span class="person">
-
-          <span class="role">
-            신랑
-          </span>
-
-          <span class="name">
-            장현우
-          </span>
-
-        </span>
-
-
-
-        <span class="heart">
-          ♥
-        </span>
-
-
-
-        <span class="person">
-
-          <span class="role">
-            신부
-          </span>
-
-          <span class="name">
-            김민지
-          </span>
-
-        </span>
-
-
-      </div>
+      <span>
+        <span class="role">신부</span>
+        <span class="name">김민지</span>
+      </span>
 
     </div>
-
 
   </section>
 
 
-
-  <!-- =========================================
-       날짜 / 장소
-  ========================================= -->
+  <!-- 날짜 -->
 
   <section class="wedding-info">
-
 
     <div class="section-small">
       WEDDING DAY
     </div>
 
-
     <div class="date-main">
-
       2026년 10월 11일 일요일<br>
-
       오전 11시
-
     </div>
-
 
     <div class="place">
-
       서울웨딩타워<br>
-
       2층 단독홀
-
     </div>
-
 
   </section>
 
 
-
-  <!-- =========================================
-       2026 OCTOBER
-  ========================================= -->
+  <!-- =========================
+       CALENDAR
+  ========================= -->
 
   <section class="calendar-section">
-
 
     <div class="month-title">
 
@@ -1021,301 +764,487 @@ body.show-card .card{
 
     </div>
 
-
-
     <div class="calendar">
 
       <table>
 
-
         <thead>
-
           <tr>
-
             <th>SUN</th>
-
             <th>MON</th>
-
             <th>TUE</th>
-
             <th>WED</th>
-
             <th>THU</th>
-
             <th>FRI</th>
-
             <th>SAT</th>
-
           </tr>
-
         </thead>
-
-
 
         <tbody>
 
-
-          <!-- 2026년 10월 1일 = 목요일 -->
-
           <tr>
-
             <td></td>
-
             <td></td>
-
             <td></td>
-
             <td></td>
 
             <td>1</td>
-
             <td>2</td>
-
             <td>3</td>
-
           </tr>
 
-
-
           <tr>
-
-            <td class="sun">
-              4
-            </td>
-
+            <td class="sun">4</td>
             <td>5</td>
-
             <td>6</td>
-
             <td>7</td>
-
             <td>8</td>
-
             <td>9</td>
-
             <td>10</td>
-
           </tr>
 
-
-
           <tr>
-
-            <td class="sun wedding-day">
-              11
-            </td>
-
+            <td class="sun wedding-day">11</td>
             <td>12</td>
-
             <td>13</td>
-
             <td>14</td>
-
             <td>15</td>
-
             <td>16</td>
-
             <td>17</td>
-
           </tr>
 
-
-
           <tr>
-
-            <td class="sun">
-              18
-            </td>
-
+            <td class="sun">18</td>
             <td>19</td>
-
             <td>20</td>
-
             <td>21</td>
-
             <td>22</td>
-
             <td>23</td>
-
             <td>24</td>
-
           </tr>
-
-
 
           <tr>
-
-            <td class="sun">
-              25
-            </td>
-
+            <td class="sun">25</td>
             <td>26</td>
-
             <td>27</td>
-
             <td>28</td>
-
             <td>29</td>
-
             <td>30</td>
-
             <td>31</td>
-
           </tr>
-
 
         </tbody>
-
 
       </table>
 
     </div>
 
-
-
-    <!-- D-DAY -->
-
     <div class="dday">
 
-
-      <div
-        class="dday-main"
-        id="ddayText"
-      >
+      <div class="dday-main" id="ddayText">
         D-DAY
       </div>
 
-
       <div class="dday-sub">
-
         2026. 10. 11 · AM 11:00
-
       </div>
 
-
     </div>
-
 
   </section>
 
 
+  <!-- =========================
+       LOCATION / 약도
+  ========================= -->
 
-  <!-- =========================================
+  <section class="location-section">
+
+    <div class="section-small">
+      LOCATION
+    </div>
+
+    <div class="location-title">
+      오시는 길
+    </div>
+
+    <div class="venue-name">
+      서울웨딩타워
+    </div>
+
+    <div
+      class="venue-addr"
+      id="addrText"
+    >
+      서울특별시 송파구 양재대로 932<br>
+      서울웨딩타워 2층 단독홀
+    </div>
+
+
+    <!-- 약도 -->
+
+    <div class="map-box">
+
+      <svg
+        viewBox="0 0 340 210"
+        xmlns="http://www.w3.org/2000/svg"
+        font-family="'Noto Serif KR', sans-serif"
+      >
+
+        <rect
+          width="340"
+          height="210"
+          fill="#F2E9DA"
+        />
+
+
+        <!-- 주요 도로 -->
+
+        <rect
+          x="83"
+          y="0"
+          width="14"
+          height="210"
+          fill="#DCC9A9"
+        />
+
+        <rect
+          x="248"
+          y="0"
+          width="14"
+          height="210"
+          fill="#DCC9A9"
+        />
+
+        <rect
+          x="0"
+          y="88"
+          width="340"
+          height="12"
+          fill="#DCC9A9"
+        />
+
+
+        <!-- 작은 도로 -->
+
+        <rect
+          x="135"
+          y="0"
+          width="4"
+          height="70"
+          fill="#E4D6BC"
+        />
+
+        <rect
+          x="152"
+          y="0"
+          width="4"
+          height="70"
+          fill="#E4D6BC"
+        />
+
+        <rect
+          x="169"
+          y="0"
+          width="4"
+          height="70"
+          fill="#E4D6BC"
+        />
+
+        <rect
+          x="160"
+          y="105"
+          width="4"
+          height="90"
+          fill="#E4D6BC"
+        />
+
+        <rect
+          x="240"
+          y="105"
+          width="4"
+          height="70"
+          fill="#E4D6BC"
+        />
+
+
+        <!-- 방면 -->
+
+        <text
+          x="10"
+          y="60"
+          font-size="9"
+          fill="#8B7F71"
+        >
+          ◀ 잠실방면
+        </text>
+
+        <text
+          x="270"
+          y="60"
+          font-size="9"
+          fill="#8B7F71"
+        >
+          성남방면 ▶
+        </text>
+
+
+        <text
+          x="103"
+          y="82"
+          font-size="7.5"
+          fill="#8B7F71"
+        >
+          송파지하차도
+        </text>
+
+
+        <!-- 주변 건물 -->
+
+        <text
+          x="103"
+          y="43"
+          font-size="8"
+          fill="#5A5044"
+        >
+          가락금호
+        </text>
+
+        <text
+          x="103"
+          y="54"
+          font-size="8"
+          fill="#5A5044"
+        >
+          아파트
+        </text>
+
+
+        <text
+          x="150"
+          y="55"
+          font-size="8"
+          fill="#5A5044"
+        >
+          우리은행
+        </text>
+
+
+        <text
+          x="18"
+          y="118"
+          font-size="8"
+          fill="#5A5044"
+        >
+          가락시장
+        </text>
+
+        <text
+          x="20"
+          y="129"
+          font-size="8"
+          fill="#5A5044"
+        >
+          사거리
+        </text>
+
+
+        <text
+          x="88"
+          y="118"
+          font-size="8"
+          fill="#5A5044"
+        >
+          동문주차장
+        </text>
+
+
+        <text
+          x="175"
+          y="118"
+          font-size="8"
+          fill="#5A5044"
+        >
+          가락몰판매동
+        </text>
+
+
+        <text
+          x="196"
+          y="136"
+          font-size="8"
+          fill="#5A5044"
+        >
+          가락시장역
+        </text>
+
+        <text
+          x="196"
+          y="147"
+          font-size="7.5"
+          fill="#8B7F71"
+        >
+          3·8호선
+        </text>
+
+        <text
+          x="196"
+          y="158"
+          font-size="7.5"
+          fill="#8B7F71"
+        >
+          2번 출구
+        </text>
+
+
+        <text
+          x="270"
+          y="120"
+          font-size="8"
+          fill="#5A5044"
+        >
+          롯데마트
+        </text>
+
+
+        <!-- 결혼식장 -->
+
+        <circle
+          cx="135"
+          cy="110"
+          r="14"
+          fill="#C87584"
+        />
+
+        <text
+          x="135"
+          y="115"
+          text-anchor="middle"
+          font-size="13"
+          fill="#fff"
+        >
+          ♥
+        </text>
+
+        <text
+          x="107"
+          y="139"
+          font-size="10"
+          font-weight="700"
+          fill="#C87584"
+        >
+          서울웨딩타워
+        </text>
+
+      </svg>
+
+    </div>
+
+
+    <!-- 지도 버튼 -->
+
+    <div class="btn-row">
+
+      <button
+        class="map-btn"
+        onclick="openNaverMap()"
+      >
+        네이버지도
+      </button>
+
+      <button
+        class="map-btn"
+        onclick="openKakaoMap()"
+      >
+        카카오맵
+      </button>
+
+      <button
+        class="map-btn"
+        onclick="copyAddress()"
+      >
+        주소 복사
+      </button>
+
+    </div>
+
+    <div
+      class="copy-message"
+      id="addrCopyMessage"
+    ></div>
+
+  </section>
+
+
+  <!-- =========================
        ACCOUNT
-  ========================================= -->
+  ========================= -->
 
   <section class="account-section">
-
 
     <div class="account-title">
       마음 전하실 곳
     </div>
 
-
-    <div class="account-desc">
-
-      직접 축하해 주시는 마음만으로도 감사하지만,<br>
-
-      멀리서 축복해 주고 싶으신 분들을 위해<br>
-
-      계좌번호를 안내드립니다.
-
-    </div>
-
-
+   
 
     <div class="account-box">
 
-
       <div class="account-person">
-
         신부 김민지 · 모 이미경
-
       </div>
-
 
       <div class="account-number">
-
         국민은행 23521-00-48983
-
       </div>
-
 
       <button
         class="copy-btn"
         onclick="copyAccount()"
       >
-
         계좌번호 복사
-
       </button>
-
 
     </div>
 
-
-
     <div
       class="copy-message"
-      id="copyMessage"
+      id="accountCopyMessage"
     ></div>
-
 
   </section>
 
 
-
-  <!-- FOOTER -->
-
   <div class="footer">
-
-    OCTOBER 11, 2026
-
-    <br>
-
+    OCTOBER 11, 2026<br>
     SEOUL WEDDING TOWER
-
   </div>
-
 
 </main>
 
 
-
 <script>
 
-
-/* =========================================
-   INTRO COUNTDOWN
-========================================= */
-
+/* =========================
+   INTRO
+========================= */
 
 const introScreen =
   document.getElementById('introScreen');
 
-
 const countdownNumber =
   document.getElementById('countdownNumber');
 
-
 let countdown = 5;
-
 let invitationOpened = false;
-
 let countdownTimer;
 
 
-
-/* 숫자 애니메이션 */
-
 function animateCountdown(){
 
-  countdownNumber.style.animation =
-    'none';
-
+  countdownNumber.style.animation = 'none';
 
   void countdownNumber.offsetWidth;
-
 
   countdownNumber.style.animation =
     'countPulse 1s ease';
@@ -1323,93 +1252,50 @@ function animateCountdown(){
 }
 
 
-
-/* 청첩장 열기 */
-
 function openInvitation(){
 
-  if(invitationOpened){
-    return;
-  }
-
+  if(invitationOpened) return;
 
   invitationOpened = true;
 
+  clearInterval(countdownTimer);
 
-  clearInterval(
-    countdownTimer
-  );
-
-
-  document.body.classList.add(
-    'show-card'
-  );
+  document.body.classList.add('show-card');
 
 }
 
 
-
-/* 최초 5 표시 */
-
-countdownNumber.textContent =
-  countdown;
-
+countdownNumber.textContent = countdown;
 
 animateCountdown();
 
 
+countdownTimer = setInterval(() => {
 
-/* 카운트다운 */
+  countdown--;
 
-countdownTimer =
-  setInterval(() => {
+  if(countdown > 0){
 
+    countdownNumber.textContent = countdown;
 
-    countdown--;
+    animateCountdown();
 
+  }else{
 
-    if(countdown > 0){
+    clearInterval(countdownTimer);
 
+    countdownNumber.textContent = '';
 
-      countdownNumber.textContent =
-        countdown;
+    setTimeout(() => {
+      openInvitation();
+    },250);
 
+  }
 
-      animateCountdown();
-
-
-    }
-
-
-    else{
-
-
-      clearInterval(
-        countdownTimer
-      );
+},1000);
 
 
-      countdownNumber.textContent =
-        '';
-
-
-      setTimeout(() => {
-
-
-        openInvitation();
-
-
-      }, 250);
-
-
-    }
-
-
-  }, 1000);
-
-
-
-/* 화면 터치 또는 클릭 시 즉시 열기 */
+/* 클릭하면 바로 입장 */
 
 introScreen.addEventListener(
   'click',
@@ -1417,141 +1303,135 @@ introScreen.addEventListener(
 );
 
 
-introScreen.addEventListener(
-  'touchstart',
-  openInvitation,
-  {
-    passive:true
-  }
-);
-
-
-
-/* =========================================
+/* =========================
    D-DAY
-========================================= */
-
+========================= */
 
 const weddingDate =
-  new Date(
-    '2026-10-11T11:00:00+09:00'
-  );
+  new Date('2026-10-11T11:00:00+09:00');
 
 
 function updateDday(){
 
+  const now = new Date();
 
-  const now =
-    new Date();
-
-
-  const diff =
-    Math.ceil(
-
-      (
-        weddingDate -
-        now
-      )
-
-      /
-
-      (
-        1000 *
-        60 *
-        60 *
-        24
-      )
-
-    );
-
+  const diff = Math.ceil(
+    (weddingDate - now)
+    /
+    (1000 * 60 * 60 * 24)
+  );
 
   const dday =
-    document.getElementById(
-      'ddayText'
-    );
+    document.getElementById('ddayText');
 
 
   if(diff > 0){
 
-
     dday.textContent =
       'D-' + diff;
 
-
-  }
-
-
-  else if(diff === 0){
-
+  }else if(diff === 0){
 
     dday.textContent =
       'D-DAY';
 
-
-  }
-
-
-  else{
-
+  }else{
 
     dday.textContent =
       '우리의 결혼식';
-
 
   }
 
 }
 
-
 updateDday();
 
 
+/* =========================
+   지도
+========================= */
 
-/* =========================================
-   계좌번호 복사
-========================================= */
+const weddingAddress =
+  '서울특별시 송파구 양재대로 932 서울웨딩타워';
 
+
+function openNaverMap(){
+
+  window.open(
+    'https://map.naver.com/p/search/'
+    +
+    encodeURIComponent(weddingAddress),
+    '_blank'
+  );
+
+}
+
+
+function openKakaoMap(){
+
+  window.open(
+    'https://map.kakao.com/?q='
+    +
+    encodeURIComponent(weddingAddress),
+    '_blank'
+  );
+
+}
+
+
+function copyAddress(){
+
+  navigator.clipboard
+    .writeText(weddingAddress)
+    .then(() => {
+
+      const el =
+        document.getElementById(
+          'addrCopyMessage'
+        );
+
+      el.textContent =
+        '주소가 복사되었습니다.';
+
+      setTimeout(() => {
+        el.textContent = '';
+      },1800);
+
+    });
+
+}
+
+
+/* =========================
+   계좌번호
+========================= */
 
 function copyAccount(){
 
-
   const account =
     '국민은행 23521-00-48983';
-
 
   navigator.clipboard
     .writeText(account)
     .then(() => {
 
-
-      const message =
+      const el =
         document.getElementById(
-          'copyMessage'
+          'accountCopyMessage'
         );
 
-
-      message.textContent =
+      el.textContent =
         '계좌번호가 복사되었습니다.';
 
-
       setTimeout(() => {
-
-
-        message.textContent =
-          '';
-
-
-      }, 1800);
-
+        el.textContent = '';
+      },1800);
 
     });
 
-
 }
 
-
 </script>
-
 
 </body>
 </html>
